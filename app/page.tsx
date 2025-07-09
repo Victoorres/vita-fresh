@@ -1,103 +1,225 @@
-import Image from "next/image";
+import Header from "@/components/header"
+import Hero from "@/components/hero"
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Heart, Users, Shield, Leaf, Star, CheckCircle, ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const beneficios = [
+    {
+      icon: Users,
+      titulo: "Nutricionistas Especializados",
+      descricao: "Equipe de profissionais qualificados desenvolvendo cada cardápio",
+      cor: "from-blue-400 to-blue-500",
+    },
+    {
+      icon: Heart,
+      titulo: "Ingredientes Premium",
+      descricao: "Selecionamos apenas os melhores ingredientes frescos e orgânicos",
+      cor: "from-red-400 to-red-500",
+    },
+    {
+      icon: Shield,
+      titulo: "Segurança Alimentar",
+      descricao: "Todos os protocolos de higiene e qualidade rigorosamente seguidos",
+      cor: "from-green-400 to-green-500",
+    },
+    {
+      icon: Leaf,
+      titulo: "Sustentabilidade",
+      descricao: "Embalagens de vidro reutilizáveis e ingredientes sustentáveis",
+      cor: "from-emerald-400 to-emerald-500",
+    },
+  ]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const depoimentos = [
+    {
+      nome: "Ana Carolina",
+      profissao: "Executiva",
+      foto: "https://randomuser.me/api/portraits/women/99.jpg?height=80&width=80",
+      texto: "Perdi 8kg em 3 meses com o acompanhamento profissional. As refeições são deliciosas!",
+      estrelas: 5,
+    },
+    {
+      nome: "Roberto Silva",
+      profissao: "Atleta",
+      foto: "https://randomuser.me/api/portraits/men/89.jpg?height=80&width=80",
+      texto: "A dieta esportiva me ajudou a melhorar minha performance. Recomendo para todos os atletas!",
+      estrelas: 5,
+    },
+    {
+      nome: "Maria Santos",
+      profissao: "Professora",
+      foto: "https://randomuser.me/api/portraits/women/89.jpg?height=80&width=80",
+      texto: "Finalmente encontrei uma dieta sem glúten que funciona. Obrigada, VitaFresh!",
+      estrelas: 5,
+    },
+  ]
+
+  const estatisticas = [
+    { numero: "5.000+", label: "Clientes Satisfeitos" },
+    { numero: "50.000+", label: "Refeições Entregues" },
+    { numero: "15+", label: "Nutricionistas" },
+    { numero: "98%", label: "Satisfação" },
+  ]
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-green-200 via-green-100 to-lime-100 relative overflow-hidden">
+      <Header />
+
+      {/* Elementos decorativos */}
+      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-60"></div>
+      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-60"></div>
+      <div className="absolute bottom-40 left-16 w-16 h-16 bg-red-400 rounded-full opacity-60"></div>
+
+      <Hero />
+
+      {/* Seção de Benefícios */}
+      <section className="py-20 px-4 relative z-20">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
+              Excelência em Nutrição
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Combinamos expertise nutricional, ingredientes premium e tecnologia para oferecer a melhor experiência em
+              alimentação saudável
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {beneficios.map((beneficio, index) => (
+              <Card
+                key={index}
+                className="bg-white/80 backdrop-blur-lg shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
+              >
+                <CardContent className="p-8 text-center">
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-br ${beneficio.cor} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    <beneficio.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-3">{beneficio.titulo}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{beneficio.descricao}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Seção de Estatísticas */}
+      <section className="py-20 px-4 bg-gradient-to-r from-green-500 to-green-600 relative z-20">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Números que Falam por Si</h2>
+            <p className="text-green-100 text-lg">A confiança de milhares de clientes em nossa expertise nutricional</p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {estatisticas.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-5xl md:text-6xl font-bold text-white mb-2">{stat.numero}</div>
+                <div className="text-green-100 font-medium text-lg">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Seção de Depoimentos */}
+      <section className="py-20 px-4 relative z-20">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
+              O que Nossos Clientes Dizem
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Histórias reais de transformação e sucesso com nosso acompanhamento nutricional
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {depoimentos.map((depoimento, index) => (
+              <Card
+                key={index}
+                className="bg-white/80 backdrop-blur-lg shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              >
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-full overflow-hidden mr-4 shadow-lg">
+                      <img
+                        src={depoimento.foto || "/placeholder.svg"}
+                        alt={depoimento.nome}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-800">{depoimento.nome}</h4>
+                      <p className="text-gray-600 text-sm">{depoimento.profissao}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex mb-4">
+                    {[...Array(depoimento.estrelas)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+
+                  <p className="text-gray-600 leading-relaxed italic">"{depoimento.texto}"</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Seção CTA */}
+      <section className="py-20 px-4 bg-gradient-to-br from-gray-800 to-gray-900 relative z-20">
+        <div className="container mx-auto max-w-4xl text-center">
+          <div className="mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Pronto para Transformar sua Alimentação?</h2>
+            <p className="text-xl text-gray-300 leading-relaxed mb-8">
+              Junte-se a milhares de pessoas que já transformaram suas vidas com nosso acompanhamento nutricional
+              profissional
+            </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+            <Link href="/cardapio">
+              <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 p-8">
+                Ver Nosso Cardápio
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+
+            <Link href="/contato">
+              <Button
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-gray-800 font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 bg-transparent p-8"
+              >
+                Falar com Nutricionista
+              </Button>
+            </Link>
+          </div>
+
+          <div className="mt-12 flex items-center justify-center gap-8 text-gray-400">
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-green-400" />
+              <span>Entrega Gratuita</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-green-400" />
+              <span>Acompanhamento Profissional</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-green-400" />
+              <span>Embalagem Sustentável</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
