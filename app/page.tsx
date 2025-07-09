@@ -201,10 +201,6 @@ export default function Home() {
           <div className="mt-12 flex items-center justify-center gap-8 text-gray-400">
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-green-400" />
-              <span>Entrega Gratuita</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-green-400" />
               <span>Acompanhamento Profissional</span>
             </div>
             <div className="flex items-center gap-2">

@@ -19,17 +19,13 @@ export default function Sobre() {
               personalizada com impacto ambiental zero — unindo ciência, sabor e sustentabilidade em cada detalhe.
             </p>
             <div className="flex items-center justify-center gap-6 text-sm">
-              <div className="flex items-center gap-2 text-green-600 font-semibold">
+              <div className="flex items-center gap-2 text-blue-600 font-semibold">
                 <Calendar className="w-5 h-5" />
                 <span>Desde 2020</span>
               </div>
               <div className="flex items-center gap-2 text-yellow-600 font-semibold">
                 <Package className="w-5 h-5" />
                 <span>Mais de 20 mil refeições entregues</span>
-              </div>
-              <div className="flex items-center gap-2 text-blue-600 font-semibold">
-                <Heart className="w-5 h-5" />
-                <span>100% de feedback positivo</span>
               </div>
             </div>
           </div>

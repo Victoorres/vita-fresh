@@ -141,10 +141,6 @@ export default function Blog() {
                   <Coffee className="w-6 h-6" />
                   <span>Receitas testadas</span>
                 </div>
-                <div className="flex items-center gap-2 text-blue-600 font-semibold">
-                  <CheckCircle className="w-6 h-6" />
-                  <span>Conteúdo validado</span>
-                </div>
               </div>
             </div>
           </div>

@@ -126,13 +126,9 @@ export default function Cardapio() {
                 nutrientes e o planeta.
               </p>
               <div className="flex items-center justify-center gap-8 text-sm">
-                <div className="flex items-center gap-2 text-green-600 font-semibold">
+                <div className="flex items-center gap-2 text-yellow-600 font-semibold">
                   <Leaf className="w-6 h-6" />
                   <span>Ingredientes 100% orgânicos</span>
-                </div>
-                <div className="flex items-center gap-2 text-yellow-600 font-semibold">
-                  <Coffee className="w-6 h-6" />
-                  <span>Preparo artesanal diário</span>
                 </div>
                 <div className="flex items-center gap-2 text-orange-600 font-semibold">
                   <Package className="w-6 h-6" />

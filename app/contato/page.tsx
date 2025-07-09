@@ -103,10 +103,6 @@ export default function Contato() {
                   <UserCheck className="w-5 h-5" />
                   <span>Primeira consulta gratuita</span>
                 </div>
-                <div className="flex items-center gap-2 text-blue-600 font-semibold">
-                  <Clock className="w-5 h-5" />
-                  <span>Retorno em até 2h úteis</span>
-                </div>
                 <div className="flex items-center gap-2 text-purple-600 font-semibold">
                   <MessageSquare className="w-5 h-5" />
                   <span>Atendimento por WhatsApp, e-mail ou vídeo</span>
