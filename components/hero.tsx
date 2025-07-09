@@ -6,6 +6,7 @@ import { MessageCircle, ShoppingCart, Sparkles, Heart, Package, Earth } from 'lu
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/components/toast';
+import Link from 'next/link';
 
 export default function Hero() {
   const router = useRouter();
@@ -109,17 +110,16 @@ export default function Hero() {
                   </p>
 
                   {/* Footer */}
-                  <div className="border-t border-gray-100 pt-6">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500 font-medium">Acompanhamento nutricional</span>
+                   <div className="border-t border-gray-100 pt-4 mt-auto">
+                    <div className="flex items-center place-self-center">
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={handleConsultNutritionist}
-                        className="text-orange-500 hover:text-orange-600 hover:bg-orange-50 transition-colors duration-200"
+                        className="text-orange-500 hover:text-orange-600 hover:bg-orange-50 text-xs p-1 h-auto transition-colors duration-200 p-4"
                       >
-                        <MessageCircle className="w-4 h-4 mr-2" />
-                        Consultar nutricionista
+                        <MessageCircle className="w-3 h-3 mr-1" />
+                        Falar com nutricionista
                       </Button>
                     </div>
                   </div>
@@ -168,17 +168,16 @@ export default function Hero() {
                   </p>
 
                   {/* Footer */}
-                  <div className="border-t border-gray-100 pt-6">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500 font-medium">Certificação sem glúten/lactose</span>
+                  <div className="border-t border-gray-100 pt-4 mt-auto">
+                    <div className="flex items-center place-self-center">
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={handleConsultNutritionist}
-                        className="text-orange-500 hover:text-orange-600 hover:bg-orange-50 transition-colors duration-200"
+                        className="text-orange-500 hover:text-orange-600 hover:bg-orange-50 text-xs p-1 h-auto transition-colors duration-200 p-4"
                       >
-                        <MessageCircle className="w-4 h-4 mr-2" />
-                        Consultar especialista
+                        <MessageCircle className="w-3 h-3 mr-1" />
+                        Falar com nutricionista
                       </Button>
                     </div>
                   </div>
