@@ -2,7 +2,7 @@ import Header from '@/components/header';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Truck, Clock, MapPin, Shield, Thermometer, Recycle, CheckCircle, Star, Leaf } from 'lucide-react';
+import { Truck, Clock, Shield, Thermometer, Recycle, Star, Leaf } from 'lucide-react';
 
 export default function Entregas() {
   const zonas = [
@@ -75,11 +75,6 @@ export default function Entregas() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-200 via-green-100 to-lime-100 relative overflow-hidden">
       <Header />
-
-      {/* Elementos decorativos */}
-      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-20"></div>
-      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-20"></div>
-      <div className="absolute bottom-40 left-16 w-16 h-16 bg-red-400 rounded-full opacity-60"></div>
 
       <section className="py-16 px-4 relative z-20">
         <div className="container mx-auto max-w-7xl">

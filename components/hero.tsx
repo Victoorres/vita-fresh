@@ -1,31 +1,31 @@
-"use client"
+'use client';
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { MessageCircle, ShoppingCart, Sparkles, Heart } from "lucide-react"
-import Image from "next/image"
-import { useRouter } from "next/navigation"
-import { useToast } from "@/components/toast"
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { MessageCircle, ShoppingCart, Sparkles, Heart, Package, Earth } from 'lucide-react';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useToast } from '@/components/toast';
 
 export default function Hero() {
-  const router = useRouter()
-  const { showToast, ToastContainer } = useToast()
+  const router = useRouter();
+  const { showToast, ToastContainer } = useToast();
 
   const handleOrderDiet = (dietType: string) => {
     const dietData = {
-      "Dieta Padrão": { id: "padrao", price: "R$ 89,90" },
-      "Sem Glúten e Lactose": { id: "sem-gluten", price: "R$ 109,90" },
-    }
+      'Dieta Padrão': { id: 'padrao', price: 'R$ 89,90' },
+      'Sem Glúten e Lactose': { id: 'sem-gluten', price: 'R$ 109,90' },
+    };
 
-    const diet = dietData[dietType as keyof typeof dietData]
+    const diet = dietData[dietType as keyof typeof dietData];
     if (diet) {
-      router.push(`/checkout?diet=${diet.id}&name=${encodeURIComponent(dietType)}&price=${diet.price}`)
+      router.push(`/checkout?diet=${diet.id}&name=${encodeURIComponent(dietType)}&price=${diet.price}`);
     }
-  }
+  };
 
   const handleConsultNutritionist = () => {
-    showToast("Redirecionando para consulta com nutricionista...", "info")
-  }
+    showToast('Redirecionando para consulta com nutricionista...', 'info');
+  };
 
   return (
     <>
@@ -42,19 +42,25 @@ export default function Hero() {
         <div className="container mx-auto max-w-6xl relative z-20">
           {/* Hero Content */}
           <div className="text-center mb-20">
-
             <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
               Dieta saudável
             </h1>
             <div className="max-w-3xl mx-auto mt-8">
               <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                Refeições balanceadas criadas por{" "}
+                Refeições balanceadas criadas por{' '}
                 <span className="font-semibold text-green-600">nutricionistas CRN </span>
                 com mais de 10 anos de experiência. Ingredientes orgânicos, preparo artesanal e acompanhamento
                 personalizado para seus objetivos de saúde e bem-estar.
               </p>
-              <div className="flex items-center justify-center gap-2 text-orange-600 font-semibold">
-                <span>Embalagens de vidro 100% sustentáveis - Cuide de você e do planeta</span>
+              <div className="flex items-center justify-center gap-8 text-sm">
+                <div className="flex items-center gap-2 text-blue-600 font-semibold">
+                  <Earth className="w-6 h-6" />
+                  <span>Cuide de você e do planeta</span>
+                </div>
+                <div className="flex items-center gap-2 text-orange-600 font-semibold">
+                  <Package className="w-6 h-6" />
+                  <span>Embalagens de vidro 100% sustentáveis</span>
+                </div>
               </div>
             </div>
           </div>
@@ -88,7 +94,7 @@ export default function Hero() {
 
                   {/* CTA Button */}
                   <Button
-                    onClick={() => handleOrderDiet("Dieta Padrão")}
+                    onClick={() => handleOrderDiet('Dieta Padrão')}
                     className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-8 py-3 rounded-full text-base shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                   >
                     <ShoppingCart className="w-5 h-5 mr-2" />
@@ -148,7 +154,7 @@ export default function Hero() {
 
                   {/* CTA Button */}
                   <Button
-                    onClick={() => handleOrderDiet("Sem Glúten e Lactose")}
+                    onClick={() => handleOrderDiet('Sem Glúten e Lactose')}
                     className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-3 rounded-full text-base shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                   >
                     <ShoppingCart className="w-5 h-5 mr-2" />
@@ -183,5 +189,5 @@ export default function Hero() {
         </div>
       </section>
     </>
-  )
+  );
 }

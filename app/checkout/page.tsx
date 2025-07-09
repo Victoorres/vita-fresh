@@ -1,89 +1,89 @@
-"use client"
+'use client';
 
-import Header from "@/components/header"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Separator } from "@/components/ui/separator"
-import { CheckCircle, ArrowLeft, ArrowRight } from "lucide-react"
-import { useState, useEffect } from "react"
-import { useSearchParams } from "next/navigation"
-import { useToast } from "@/components/toast"
+import Header from '@/components/header';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { Separator } from '@/components/ui/separator';
+import { CheckCircle, ArrowLeft, ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useToast } from '@/components/toast';
 
 export default function Checkout() {
-  const searchParams = useSearchParams()
-  const { showToast, ToastContainer } = useToast()
-  const [step, setStep] = useState(1)
+  const searchParams = useSearchParams();
+  const { showToast, ToastContainer } = useToast();
+  const [step, setStep] = useState(1);
   const [orderData, setOrderData] = useState({
-    name: "",
-    price: "",
-    dietId: "",
-  })
+    name: '',
+    price: '',
+    dietId: '',
+  });
 
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    cpf: "",
-    cep: "",
-    address: "",
-    number: "",
-    complement: "",
-    neighborhood: "",
-    city: "",
-    state: "",
-    deliveryDate: "",
-    deliveryTime: "",
-    observations: "",
-    cardNumber: "",
-    cardName: "",
-    expiryDate: "",
-    cvv: "",
-  })
+    fullName: '',
+    email: '',
+    phone: '',
+    cpf: '',
+    cep: '',
+    address: '',
+    number: '',
+    complement: '',
+    neighborhood: '',
+    city: '',
+    state: '',
+    deliveryDate: '',
+    deliveryTime: '',
+    observations: '',
+    cardNumber: '',
+    cardName: '',
+    expiryDate: '',
+    cvv: '',
+  });
 
   useEffect(() => {
-    const dietId = searchParams.get("diet") || searchParams.get("plan")
-    const name = searchParams.get("name")
-    const price = searchParams.get("price")
+    const dietId = searchParams.get('diet') || searchParams.get('plan');
+    const name = searchParams.get('name');
+    const price = searchParams.get('price');
 
     if (name && price && (orderData.name !== decodeURIComponent(name) || orderData.price !== price)) {
       setOrderData({
         name: decodeURIComponent(name),
         price: price,
-        dietId: dietId || "",
-      })
+        dietId: dietId || '',
+      });
     }
-  }, [searchParams, orderData.name, orderData.price])
+  }, [searchParams, orderData.name, orderData.price]);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({
       ...prev,
       [field]: value,
-    }))
-  }
+    }));
+  };
 
   const handleNextStep = () => {
     if (step < 4) {
-      setStep(step + 1)
-      showToast("Etapa concluída com sucesso!", "success")
+      setStep(step + 1);
+      showToast('Etapa concluída com sucesso!', 'success');
     }
-  }
+  };
 
   const handlePrevStep = () => {
     if (step > 1) {
-      setStep(step - 1)
+      setStep(step - 1);
     }
-  }
+  };
 
   const handleFinishOrder = () => {
-    setStep(5)
-    showToast("Pedido realizado com sucesso! Você receberá um email de confirmação em breve.", "success")
-  }
+    setStep(5);
+    showToast('Pedido realizado com sucesso! Você receberá um email de confirmação em breve.', 'success');
+  };
 
-  const stepTitles = ["Dados Pessoais", "Endereço", "Agendamento", "Pagamento"]
-  const stepTitlesMobile = ["Dados", "Endereço", "Entrega", "Pagamento"]
+  const stepTitles = ['Dados Pessoais', 'Endereço', 'Agendamento', 'Pagamento'];
+  const stepTitlesMobile = ['Dados', 'Endereço', 'Entrega', 'Pagamento'];
 
   const renderStepContent = () => {
     switch (step) {
@@ -98,7 +98,7 @@ export default function Checkout() {
                 <Input
                   id="fullName"
                   value={formData.fullName}
-                  onChange={(e) => handleInputChange("fullName", e.target.value)}
+                  onChange={(e) => handleInputChange('fullName', e.target.value)}
                   placeholder="Seu nome completo"
                   className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
@@ -111,7 +111,7 @@ export default function Checkout() {
                   id="email"
                   type="email"
                   value={formData.email}
-                  onChange={(e) => handleInputChange("email", e.target.value)}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
                   placeholder="seu@email.com"
                   className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
@@ -123,7 +123,7 @@ export default function Checkout() {
                 <Input
                   id="phone"
                   value={formData.phone}
-                  onChange={(e) => handleInputChange("phone", e.target.value)}
+                  onChange={(e) => handleInputChange('phone', e.target.value)}
                   placeholder="(11) 99999-9999"
                   className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
@@ -135,14 +135,14 @@ export default function Checkout() {
                 <Input
                   id="cpf"
                   value={formData.cpf}
-                  onChange={(e) => handleInputChange("cpf", e.target.value)}
+                  onChange={(e) => handleInputChange('cpf', e.target.value)}
                   placeholder="000.000.000-00"
                   className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
               </div>
             </div>
           </div>
-        )
+        );
 
       case 2:
         return (
@@ -155,7 +155,7 @@ export default function Checkout() {
                 <Input
                   id="cep"
                   value={formData.cep}
-                  onChange={(e) => handleInputChange("cep", e.target.value)}
+                  onChange={(e) => handleInputChange('cep', e.target.value)}
                   placeholder="00000-000"
                   className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
@@ -167,7 +167,7 @@ export default function Checkout() {
                 <Input
                   id="address"
                   value={formData.address}
-                  onChange={(e) => handleInputChange("address", e.target.value)}
+                  onChange={(e) => handleInputChange('address', e.target.value)}
                   placeholder="Rua, Avenida..."
                   className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
@@ -179,7 +179,7 @@ export default function Checkout() {
                 <Input
                   id="number"
                   value={formData.number}
-                  onChange={(e) => handleInputChange("number", e.target.value)}
+                  onChange={(e) => handleInputChange('number', e.target.value)}
                   placeholder="123"
                   className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
@@ -191,7 +191,7 @@ export default function Checkout() {
                 <Input
                   id="complement"
                   value={formData.complement}
-                  onChange={(e) => handleInputChange("complement", e.target.value)}
+                  onChange={(e) => handleInputChange('complement', e.target.value)}
                   placeholder="Apto, Bloco..."
                   className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
@@ -203,7 +203,7 @@ export default function Checkout() {
                 <Input
                   id="neighborhood"
                   value={formData.neighborhood}
-                  onChange={(e) => handleInputChange("neighborhood", e.target.value)}
+                  onChange={(e) => handleInputChange('neighborhood', e.target.value)}
                   placeholder="Nome do bairro"
                   className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
@@ -215,14 +215,14 @@ export default function Checkout() {
                 <Input
                   id="city"
                   value={formData.city}
-                  onChange={(e) => handleInputChange("city", e.target.value)}
+                  onChange={(e) => handleInputChange('city', e.target.value)}
                   placeholder="São Paulo"
                   className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
               </div>
             </div>
           </div>
-        )
+        );
 
       case 3:
         return (
@@ -236,7 +236,7 @@ export default function Checkout() {
                   id="deliveryDate"
                   type="date"
                   value={formData.deliveryDate}
-                  onChange={(e) => handleInputChange("deliveryDate", e.target.value)}
+                  onChange={(e) => handleInputChange('deliveryDate', e.target.value)}
                   className="bg-white border-gray-300 pt-[3.9vh] pb-[3.9vh] focus:border-green-500 focus:ring-green-500"
                 />
               </div>
@@ -247,7 +247,7 @@ export default function Checkout() {
                 <select
                   id="deliveryTime"
                   value={formData.deliveryTime}
-                  onChange={(e) => handleInputChange("deliveryTime", e.target.value)}
+                  onChange={(e) => handleInputChange('deliveryTime', e.target.value)}
                   className="w-full p-3 border border-gray-300 rounded-md bg-white focus:border-green-500 focus:ring-green-500"
                 >
                   <option value="">Selecione um horário</option>
@@ -268,14 +268,14 @@ export default function Checkout() {
               <Textarea
                 id="observations"
                 value={formData.observations}
-                onChange={(e) => handleInputChange("observations", e.target.value)}
+                onChange={(e) => handleInputChange('observations', e.target.value)}
                 placeholder="Alguma observação especial para a entrega..."
                 className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 rows={3}
               />
             </div>
           </div>
-        )
+        );
 
       case 4:
         return (
@@ -288,7 +288,7 @@ export default function Checkout() {
                 <Input
                   id="cardNumber"
                   value={formData.cardNumber}
-                  onChange={(e) => handleInputChange("cardNumber", e.target.value)}
+                  onChange={(e) => handleInputChange('cardNumber', e.target.value)}
                   placeholder="0000 0000 0000 0000"
                   className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
@@ -300,7 +300,7 @@ export default function Checkout() {
                 <Input
                   id="cardName"
                   value={formData.cardName}
-                  onChange={(e) => handleInputChange("cardName", e.target.value)}
+                  onChange={(e) => handleInputChange('cardName', e.target.value)}
                   placeholder="Nome como está no cartão"
                   className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
@@ -312,7 +312,7 @@ export default function Checkout() {
                 <Input
                   id="expiryDate"
                   value={formData.expiryDate}
-                  onChange={(e) => handleInputChange("expiryDate", e.target.value)}
+                  onChange={(e) => handleInputChange('expiryDate', e.target.value)}
                   placeholder="MM/AA"
                   className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
@@ -324,14 +324,14 @@ export default function Checkout() {
                 <Input
                   id="cvv"
                   value={formData.cvv}
-                  onChange={(e) => handleInputChange("cvv", e.target.value)}
+                  onChange={(e) => handleInputChange('cvv', e.target.value)}
                   placeholder="123"
                   className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
               </div>
             </div>
           </div>
-        )
+        );
 
       case 5:
         return (
@@ -353,18 +353,18 @@ export default function Checkout() {
               </p>
             </div>
             <Button
-              onClick={() => (window.location.href = "/")}
+              onClick={() => (window.location.href = '/')}
               className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full"
             >
               Voltar ao Início
             </Button>
           </div>
-        )
+        );
 
       default:
-        return null
+        return null;
     }
-  }
+  };
 
   if (!orderData.name && !orderData.price) {
     return (
@@ -374,151 +374,157 @@ export default function Checkout() {
           <p className="text-gray-600">Carregando...</p>
         </div>
       </div>
-    )
+    );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-green-200 via-green-100 to-lime-100 relative overflow-hidden">
       <Header />
       <ToastContainer />
 
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
-        {/* Header da página */}
-        <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Finalizar Pedido</h1>
-          <p className="text-gray-600">Complete os dados para finalizar sua compra</p>
-        </div>
+      <section className="py-16 px-4 relative z-20">
+        <div className="container mx-auto max-w-7xl">
+          {/* Hero da página */}
+          <div className="text-center mb-22">
+            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent pb-6">
+              Finalizar pedido
+            </h1>
+            <div className="max-w-4xl mx-auto">
+              <p className="text-xl text-gray-600 leading-relaxed mb-6">Complete os dados para finalizar sua compra</p>
+            </div>
+          </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Formulário */}
-          <div className="lg:col-span-2">
-            <Card className="shadow-lg border-0">
-              <CardContent className="p-4 md:p-8">
-                {/* Progress Steps - Responsivo */}
-                {step < 5 && (
-                  <div className="mb-8">
-                    {/* Steps Unificadas */}
-                    <div className="flex items-center justify-between mb-6">
-                      {[1, 2, 3, 4].map((stepNumber, index) => (
-                        <div key={stepNumber} className="flex flex-col items-center flex-1">
-                          <div
-                            className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
-                              step >= stepNumber ? "bg-green-500 text-white shadow-lg" : "bg-gray-300 text-gray-600"
-                            }`}
-                          >
-                            {step > stepNumber ? <CheckCircle className="w-5 h-5" /> : stepNumber}
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Formulário */}
+            <div className="lg:col-span-2">
+              <Card className="shadow-lg border-0">
+                <CardContent className="p-4 md:p-8">
+                  {/* Progress Steps - Responsivo */}
+                  {step < 5 && (
+                    <div className="mb-8">
+                      {/* Steps Unificadas */}
+                      <div className="flex items-center justify-between mb-6">
+                        {[1, 2, 3, 4].map((stepNumber, index) => (
+                          <div key={stepNumber} className="flex flex-col items-center flex-1">
+                            <div
+                              className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
+                                step >= stepNumber ? 'bg-green-500 text-white shadow-lg' : 'bg-gray-300 text-gray-600'
+                              }`}
+                            >
+                              {step > stepNumber ? <CheckCircle className="w-5 h-5" /> : stepNumber}
+                            </div>
+                            <span
+                              className={`text-xs mt-2 text-center font-medium transition-colors duration-300 ${
+                                step >= stepNumber ? 'text-green-600' : 'text-gray-500'
+                              }`}
+                            >
+                              {stepTitlesMobile[stepNumber - 1]}
+                            </span>
                           </div>
-                          <span
-                            className={`text-xs mt-2 text-center font-medium transition-colors duration-300 ${
-                              step >= stepNumber ? "text-green-600" : "text-gray-500"
-                            }`}
-                          >
-                            {stepTitlesMobile[stepNumber - 1]}
-                          </span>
+                        ))}
+                      </div>
+
+                      {/* Progress Bar */}
+                      <div className="w-full bg-gray-300 rounded-full h-2 mb-6">
+                        <div
+                          className="bg-green-500 h-2 rounded-full transition-all duration-500 ease-out"
+                          style={{ width: `${(step / 4) * 100}%` }}
+                        />
+                      </div>
+
+                      {/* Current Step Indicator */}
+                      <div className="text-center mb-6">
+                        <h2 className="text-xl font-bold text-gray-800">
+                          Etapa {step} de 4: {stepTitles[step - 1]}
+                        </h2>
+                        <p className="text-gray-600 text-sm mt-1">Preencha os campos abaixo para continuar</p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Step Content */}
+                  <div className="transition-all duration-300 ease-in-out">{renderStepContent()}</div>
+
+                  {/* Navigation Buttons */}
+                  {step < 5 && (
+                    <div className="flex flex-col sm:flex-row gap-4 sm:justify-between mt-8 pt-6 border-t">
+                      <Button
+                        variant="outline"
+                        onClick={handlePrevStep}
+                        disabled={step === 1}
+                        className="order-2 sm:order-1 bg-white border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50"
+                      >
+                        <ArrowLeft className="w-4 h-4 mr-2" />
+                        Voltar
+                      </Button>
+                      <Button
+                        onClick={step === 4 ? handleFinishOrder : handleNextStep}
+                        className="order-1 sm:order-2 bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                      >
+                        {step === 4 ? 'Finalizar Pedido' : 'Próximo'}
+                        {step < 4 && <ArrowRight className="w-4 h-4 ml-2" />}
+                      </Button>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Resumo do Pedido */}
+            <div className="lg:col-span-1">
+              <Card className="shadow-lg border-0 sticky top-24">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-6">Resumo do Pedido</h3>
+
+                  {orderData.name && (
+                    <div className="space-y-4">
+                      <div className="bg-gray-50 p-4 rounded-lg">
+                        <h4 className="font-semibold text-gray-800 mb-2">{orderData.name}</h4>
+                        <div className="mt-3">
+                          <span className="text-2xl font-bold text-gray-800">{orderData.price}</span>
                         </div>
-                      ))}
-                    </div>
-
-                    {/* Progress Bar */}
-                    <div className="w-full bg-gray-300 rounded-full h-2 mb-6">
-                      <div
-                        className="bg-green-500 h-2 rounded-full transition-all duration-500 ease-out"
-                        style={{ width: `${(step / 4) * 100}%` }}
-                      />
-                    </div>
-
-                    {/* Current Step Indicator */}
-                    <div className="text-center mb-6">
-                      <h2 className="text-xl font-bold text-gray-800">
-                        Etapa {step} de 4: {stepTitles[step - 1]}
-                      </h2>
-                      <p className="text-gray-600 text-sm mt-1">Preencha os campos abaixo para continuar</p>
-                    </div>
-                  </div>
-                )}
-
-                {/* Step Content */}
-                <div className="transition-all duration-300 ease-in-out">{renderStepContent()}</div>
-
-                {/* Navigation Buttons */}
-                {step < 5 && (
-                  <div className="flex flex-col sm:flex-row gap-4 sm:justify-between mt-8 pt-6 border-t">
-                    <Button
-                      variant="outline"
-                      onClick={handlePrevStep}
-                      disabled={step === 1}
-                      className="order-2 sm:order-1 bg-white border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50"
-                    >
-                      <ArrowLeft className="w-4 h-4 mr-2" />
-                      Voltar
-                    </Button>
-                    <Button
-                      onClick={step === 4 ? handleFinishOrder : handleNextStep}
-                      className="order-1 sm:order-2 bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transition-all duration-300"
-                    >
-                      {step === 4 ? "Finalizar Pedido" : "Próximo"}
-                      {step < 4 && <ArrowRight className="w-4 h-4 ml-2" />}
-                    </Button>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Resumo do Pedido */}
-          <div className="lg:col-span-1">
-            <Card className="shadow-lg border-0 sticky top-24">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-6">Resumo do Pedido</h3>
-
-                {orderData.name && (
-                  <div className="space-y-4">
-                    <div className="bg-gray-50 p-4 rounded-lg">
-                      <h4 className="font-semibold text-gray-800 mb-2">{orderData.name}</h4>
-                      <div className="mt-3">
-                        <span className="text-2xl font-bold text-gray-800">{orderData.price}</span>
                       </div>
-                    </div>
 
-                    <Separator />
-
-                    <div className="space-y-3">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">Subtotal:</span>
-                        <span className="text-gray-800 font-medium">{orderData.price}</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">Entrega:</span>
-                        <span className="text-green-600 font-medium">Grátis</span>
-                      </div>
                       <Separator />
-                      <div className="flex justify-between text-lg font-bold">
-                        <span>Total:</span>
-                        <span className="text-green-600">{orderData.price}</span>
+
+                      <div className="space-y-3">
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-600">Subtotal:</span>
+                          <span className="text-gray-800 font-medium">{orderData.price}</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-600">Entrega:</span>
+                          <span className="text-green-600 font-medium">Grátis</span>
+                        </div>
+                        <Separator />
+                        <div className="flex justify-between text-lg font-bold">
+                          <span>Total:</span>
+                          <span className="text-green-600">{orderData.price}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
+                  )}
 
-                <div className="mt-6 space-y-3">
-                  <div className="flex items-center gap-3 text-sm text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    <span>Entrega gratuita</span>
+                  <div className="mt-6 space-y-3">
+                    <div className="flex items-center gap-3 text-sm text-gray-600">
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span>Entrega gratuita</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm text-gray-600">
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span>Embalagem de vidro sustentável</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm text-gray-600">
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span>Suporte nutricional incluído</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3 text-sm text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    <span>Embalagem de vidro sustentável</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    <span>Suporte nutricional incluído</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
-  )
+  );
 }

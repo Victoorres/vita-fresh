@@ -65,7 +65,7 @@ export default function Header() {
           Contato
         </Link>
         <Link href="/painel" className={`px-6 py-2.5 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-200 hover:scale-105 ${isActive('/painel') ? 'bg-green-600 text-white shadow-lg' : 'bg-gradient-to-r from-green-500 to-green-600 text-white'}`}>
-          Painel do Cliente
+          Painel do cliente
         </Link>
       </nav>
     </div>

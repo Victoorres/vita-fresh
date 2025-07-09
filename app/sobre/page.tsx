@@ -7,11 +7,6 @@ export default function Sobre() {
     <div className="min-h-screen bg-gradient-to-br from-green-200 via-green-100 to-lime-100 relative overflow-hidden">
       <Header />
 
-      {/* Elementos decorativos */}
-      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-20"></div>
-      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-20"></div>
-      <div className="absolute bottom-40 left-16 w-16 h-16 bg-red-400 rounded-full opacity-60"></div>
-
       <section className="py-16 px-4 relative z-20">
         <div className="container mx-auto max-w-6xl">
           {/* Hero da página */}
@@ -26,7 +21,7 @@ export default function Sobre() {
             <div className="flex items-center justify-center gap-6 text-sm">
               <div className="flex items-center gap-2 text-green-600 font-semibold">
                 <Calendar className="w-5 h-5" />
-                <span>Desde 2013</span>
+                <span>Desde 2020</span>
               </div>
               <div className="flex items-center gap-2 text-yellow-600 font-semibold">
                 <Package className="w-5 h-5" />
@@ -44,7 +39,7 @@ export default function Sobre() {
             <CardContent className="p-12">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                  <h2 className="text-3xl font-bold text-gray-800 mb-6">A Revolução Começou em 2020</h2>
+                  <h2 className="text-3xl font-bold text-gray-800 mb-6">A revolução começou em 2020</h2>
                   <p className="text-gray-600 leading-relaxed mb-4">
                     Durante a pandemia, três nutricionistas CRN e um chef premiado se uniram com uma missão:
                     democratizar a alimentação saudável sem comprometer o planeta. O que começou como um laboratório
@@ -106,7 +101,7 @@ export default function Sobre() {
           {/* Equipe */}
           <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-0">
             <CardContent className="p-12">
-              <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">Mentes Brilhantes, Propósito Comum</h2>
+              <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">Mentes brilhantes, propósito comum</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 {[
                   {
