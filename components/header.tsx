@@ -1,15 +1,16 @@
-import Link from "next/link"
-import { Home, UtensilsCrossed, Truck, User, Phone } from "lucide-react"
-import Image from "next/image"
+import Link from 'next/link';
+import { Home, UtensilsCrossed, Truck, User, Phone, BookOpen } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Header() {
   const navItems = [
-    { name: "Início", href: "/", icon: Home },
-    { name: "Cardápio", href: "/cardapio", icon: UtensilsCrossed },
-    { name: "Entregas", href: "/entregas", icon: Truck },
-    { name: "Sobre", href: "/sobre", icon: User },
-    { name: "Contato", href: "/contato", icon: Phone },
-  ]
+    { name: 'Início', href: '/', icon: Home },
+    { name: 'Blog', href: '/blog', icon: BookOpen },
+    { name: 'Cardápio', href: '/cardapio', icon: UtensilsCrossed },
+    { name: 'Entregas', href: '/entregas', icon: Truck },
+    { name: 'Sobre', href: '/sobre', icon: User },
+    { name: 'Contato', href: '/contato', icon: Phone },
+  ];
 
   return (
     <>
@@ -19,6 +20,12 @@ export default function Header() {
           <div className="flex items-center justify-between">
             {/* Left Navigation - Desktop */}
             <nav className="flex items-center space-x-10">
+              <Link
+                href="/blog"
+                className="text-gray-700 hover:text-green-600 text-sm font-medium transition-colors duration-200"
+              >
+                Blog
+              </Link>
               <Link
                 href="/cardapio"
                 className="text-gray-700 hover:text-green-600 text-sm font-medium transition-colors duration-200"
@@ -96,7 +103,7 @@ export default function Header() {
 
       {/* Bottom Navigation Mobile */}
       <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 z-50 shadow-2xl">
-        <div className="grid grid-cols-5 h-20">
+        <div className="grid grid-cols-6 h-20">
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -115,5 +122,5 @@ export default function Header() {
       {/* Spacer for mobile bottom nav */}
       <div className="lg:hidden h-20"></div>
     </>
-  )
+  );
 }
