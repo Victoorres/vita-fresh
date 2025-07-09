@@ -1,138 +1,147 @@
-"use client"
+'use client';
 
-import Header from "@/components/header"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Clock, Zap, ShoppingCart, MessageCircle, Heart, Award } from "lucide-react"
-import Image from "next/image"
-import { useRouter } from "next/navigation"
-import { useToast } from "@/components/toast"
+import Header from '@/components/header';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Clock, Zap, ShoppingCart, MessageCircle, Heart, Award, Package, Coffee, Leaf } from 'lucide-react';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useToast } from '@/components/toast';
 
 export default function Cardapio() {
-  const router = useRouter()
-  const { showToast, ToastContainer } = useToast()
+  const router = useRouter();
+  const { showToast, ToastContainer } = useToast();
 
   const dietas = [
     {
-      id: "padrao",
-      nome: "Dieta Padrão",
+      id: 'padrao',
+      nome: 'Dieta Padrão',
       descricao:
-        "Cardápio equilibrado com proteínas magras, carboidratos complexos e vegetais orgânicos. Perfeito para manter energia e vitalidade no dia a dia.",
-      calorias: "1200-1800 kcal/dia",
+        'Cardápio equilibrado com proteínas magras, carboidratos complexos e vegetais orgânicos. Perfeito para manter energia e vitalidade no dia a dia.',
+      calorias: '1200-1800 kcal/dia',
       refeicoes: 5,
-      preco: "R$ 89,90",
-      periodo: "por semana",
-      badge: "Mais Popular",
-      badgeColor: "bg-gradient-to-r from-green-500 to-green-600",
-      image: "/dieta-padrao.png?height=160&width=160",
+      preco: 'R$ 89,90',
+      periodo: 'por semana',
+      badge: 'Mais Popular',
+      badgeColor: 'bg-gradient-to-r from-green-500 to-green-600',
+      image: '/dieta-padrao.png?height=160&width=160',
     },
     {
-      id: "sem-gluten",
-      nome: "Sem Glúten e Lactose",
+      id: 'sem-gluten',
+      nome: 'Sem Glúten e Lactose',
       descricao:
-        "Refeições certificadas para celíacos e intolerantes, com farinhas alternativas e substitutos lácteos naturais. Sabor sem limitações.",
-      calorias: "1300-1700 kcal/dia",
+        'Refeições certificadas para celíacos e intolerantes, com farinhas alternativas e substitutos lácteos naturais. Sabor sem limitações.',
+      calorias: '1300-1700 kcal/dia',
       refeicoes: 5,
-      preco: "R$ 109,90",
-      periodo: "por semana",
-      badge: "Especializada",
-      badgeColor: "bg-gradient-to-r from-orange-500 to-orange-600",
-      image: "/placeholder.svg?height=160&width=160",
+      preco: 'R$ 109,90',
+      periodo: 'por semana',
+      badge: 'Especializada',
+      badgeColor: 'bg-gradient-to-r from-orange-500 to-orange-600',
+      image: '/sem-gluten.png?height=160&width=160',
     },
     {
-      id: "low-carb",
-      nome: "Low Carb",
+      id: 'low-carb',
+      nome: 'Low Carb',
       descricao:
-        "Redução inteligente de carboidratos com foco em proteínas de alta qualidade e gorduras boas. Acelere seu metabolismo naturalmente.",
-      calorias: "1000-1500 kcal/dia",
+        'Redução inteligente de carboidratos com foco em proteínas de alta qualidade e gorduras boas. Acelere seu metabolismo naturalmente.',
+      calorias: '1000-1500 kcal/dia',
       refeicoes: 4,
-      preco: "R$ 99,90",
-      periodo: "por semana",
-      badge: "Emagrecimento",
-      badgeColor: "bg-gradient-to-r from-red-500 to-red-600",
-      image: "/placeholder.svg?height=160&width=160",
+      preco: 'R$ 99,90',
+      periodo: 'por semana',
+      badge: 'Emagrecimento',
+      badgeColor: 'bg-gradient-to-r from-red-500 to-red-600',
+      image: '/low-carb.png?height=160&width=160',
     },
     {
-      id: "vegana",
-      nome: "Dieta Vegana",
+      id: 'vegana',
+      nome: 'Dieta Vegana',
       descricao:
-        "Plant-based completo com proteínas vegetais, superalimentos e suplementação natural. Nutrição consciente para você e o planeta.",
-      calorias: "1400-1800 kcal/dia",
+        'Plant-based completo com proteínas vegetais, superalimentos e suplementação natural. Nutrição consciente para você e o planeta.',
+      calorias: '1400-1800 kcal/dia',
       refeicoes: 5,
-      preco: "R$ 94,90",
-      periodo: "por semana",
-      badge: "Plant-Based",
-      badgeColor: "bg-gradient-to-r from-green-600 to-green-700",
-      image: "/placeholder.svg?height=160&width=160",
+      preco: 'R$ 94,90',
+      periodo: 'por semana',
+      badge: 'Plant-Based',
+      badgeColor: 'bg-gradient-to-r from-green-600 to-green-700',
+      image: '/vegano.png?height=160&width=160',
     },
     {
-      id: "esportiva",
-      nome: "Dieta Esportiva",
+      id: 'esportiva',
+      nome: 'Dieta Esportiva',
       descricao:
-        "Alto valor proteico e carboidratos estratégicos para performance máxima. Desenvolvida para atletas e praticantes de exercícios intensos.",
-      calorias: "2000-2500 kcal/dia",
+        'Alto valor proteico e carboidratos estratégicos para performance máxima. Desenvolvida para atletas e praticantes de exercícios intensos.',
+      calorias: '2000-2500 kcal/dia',
       refeicoes: 6,
-      preco: "R$ 129,90",
-      periodo: "por semana",
-      badge: "Performance",
-      badgeColor: "bg-gradient-to-r from-blue-500 to-blue-600",
-      image: "/placeholder.svg?height=160&width=160",
+      preco: 'R$ 129,90',
+      periodo: 'por semana',
+      badge: 'Performance',
+      badgeColor: 'bg-gradient-to-r from-blue-500 to-blue-600',
+      image: '/dieta-esportiva.png?height=160&width=160',
     },
     {
-      id: "detox",
-      nome: "Dieta Detox",
+      id: 'detox',
+      nome: 'Dieta Detox',
       descricao:
-        "Programa de 7 dias com alimentos antioxidantes, chás funcionais e sucos verdes. Renove seu organismo de dentro para fora.",
-      calorias: "1100-1400 kcal/dia",
+        'Programa de 7 dias com alimentos antioxidantes, chás funcionais e sucos verdes. Renove seu organismo de dentro para fora.',
+      calorias: '1100-1400 kcal/dia',
       refeicoes: 4,
-      preco: "R$ 119,90",
-      periodo: "por semana",
-      badge: "Detox",
-      badgeColor: "bg-gradient-to-r from-purple-500 to-purple-600",
-      image: "/placeholder.svg?height=160&width=160",
+      preco: 'R$ 119,90',
+      periodo: 'por semana',
+      badge: 'Detox',
+      badgeColor: 'bg-gradient-to-r from-purple-500 to-purple-600',
+      image: '/dieta-detox.png?height=160&width=160',
     },
-  ]
+  ];
 
   const handleOrderDiet = (dietId: string) => {
-    const diet = dietas.find((d) => d.id === dietId)
+    const diet = dietas.find((d) => d.id === dietId);
     if (diet) {
-      router.push(`/checkout?diet=${dietId}&name=${encodeURIComponent(diet.nome)}&price=${diet.preco}`)
+      router.push(`/checkout?diet=${dietId}&name=${encodeURIComponent(diet.nome)}&price=${diet.preco}`);
     }
-  }
+  };
 
   const handleConsultNutritionist = () => {
-    showToast("Redirecionando para consulta com nutricionista...", "info")
-  }
+    showToast('Redirecionando para consulta com nutricionista...', 'info');
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-200 via-green-100 to-lime-100 relative overflow-hidden">
       <Header />
       <ToastContainer />
 
-      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-60"></div>
-      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-60"></div>
+      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-20"></div>
+      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-20"></div>
       <div className="absolute bottom-40 left-16 w-16 h-16 bg-red-400 rounded-full opacity-60"></div>
 
       <section className="py-16 px-4 relative z-10">
         <div className="container mx-auto max-w-7xl">
           {/* Hero da página */}
           <div className="text-center mb-20">
-            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
-              Cardápio VitaFresh
+            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent pb-6">
+              Nossos pratos
             </h1>
             <div className="max-w-4xl mx-auto">
               <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                Cada refeição é uma obra de arte nutricional criada por{" "}
-                <span className="font-semibold text-green-600">nutricionistas CRN certificados</span>. Ingredientes
-                orgânicos selecionados, preparo artesanal diário e entrega em
-                <span className="font-bold text-orange-600 mx-2">EMBALAGENS DE VIDRO</span>
-                para preservar sabor, nutrientes e o meio ambiente.
+                Refeições equilibradas, criadas por{' '}
+                <span className="font-semibold text-green-600">nutricionistas CRN certificados</span>, com ingredientes
+                orgânicos e preparo artesanal. Entregues em{' '}
+                <span className="font-bold text-orange-600">embalagens de vidro</span> que preservam o sabor, os
+                nutrientes e o planeta.
               </p>
-              <div className="flex items-center justify-center gap-2 text-green-600 font-semibold">
-                <Heart className="w-5 h-5" />
-                <span>Consultoria nutricional personalizada incluída em todos os planos</span>
-                <Heart className="w-5 h-5" />
+              <div className="flex items-center justify-center gap-8 text-sm">
+                <div className="flex items-center gap-2 text-green-600 font-semibold">
+                  <Leaf className="w-6 h-6" />
+                  <span>Ingredientes 100% orgânicos</span>
+                </div>
+                <div className="flex items-center gap-2 text-yellow-600 font-semibold">
+                  <Coffee className="w-6 h-6" />
+                  <span>Preparo artesanal diário</span>
+                </div>
+                <div className="flex items-center gap-2 text-orange-600 font-semibold">
+                  <Package className="w-6 h-6" />
+                  <span>Embalagens de vidro reutilizáveis</span>
+                </div>
               </div>
             </div>
           </div>
@@ -142,7 +151,7 @@ export default function Cardapio() {
             {dietas.map((dieta, index) => (
               <Card
                 key={index}
-                className="bg-white/80 backdrop-blur-lg shadow-xl border-0 overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 group flex flex-col relative z-20"
+                className="bg-white/80 backdrop-blur-lg shadow-xl border-0 overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 group flex flex-col relative z-20 pb-0"
               >
                 <CardContent className="p-8 flex flex-col h-full">
                   {/* Badge */}
@@ -159,7 +168,7 @@ export default function Cardapio() {
                     <div className="relative">
                       <div className="w-36 h-36 bg-gradient-to-br from-white to-gray-50 rounded-full shadow-xl overflow-hidden border-4 border-gray-100 group-hover:border-green-200 transition-colors duration-300">
                         <Image
-                          src={dieta.image || "/placeholder.svg"}
+                          src={dieta.image || '/placeholder.svg'}
                           alt={dieta.nome}
                           width={144}
                           height={144}
@@ -213,13 +222,12 @@ export default function Cardapio() {
 
                   {/* Footer do card */}
                   <div className="border-t border-gray-100 pt-4 mt-auto">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-500 font-medium">Consultoria CRN incluída</span>
+                    <div className="flex items-center place-self-center">
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={handleConsultNutritionist}
-                        className="text-orange-500 hover:text-orange-600 hover:bg-orange-50 text-xs p-1 h-auto transition-colors duration-200"
+                        className="text-orange-500 hover:text-orange-600 hover:bg-orange-50 text-xs p-1 h-auto transition-colors duration-200 p-4"
                       >
                         <MessageCircle className="w-3 h-3 mr-1" />
                         Falar com nutricionista
@@ -235,7 +243,7 @@ export default function Cardapio() {
           <Card className="bg-white/80 backdrop-blur-lg shadow-2xl border-0 relative z-20">
             <CardContent className="p-12 text-center">
               <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-8">
-                Da Cozinha à Sua Mesa: Nosso Processo
+                Da cozinha à sua mesa: Nosso processo
               </h2>
               <div className="grid md:grid-cols-3 gap-10">
                 <div className="group">
@@ -272,5 +280,5 @@ export default function Cardapio() {
         </div>
       </section>
     </div>
-  )
+  );
 }

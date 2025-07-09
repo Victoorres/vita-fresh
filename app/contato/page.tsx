@@ -1,99 +1,121 @@
-import Header from "@/components/header"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Clock, MessageCircle, Send, Users, Heart, Award, CheckCircle } from "lucide-react"
+import Header from '@/components/header';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  MessageCircle,
+  Send,
+  Users,
+  Heart,
+  Award,
+  CheckCircle,
+  UserCheck,
+  MessageSquare,
+} from 'lucide-react';
 
 export default function Contato() {
   const informacoesContato = [
     {
       icon: Phone,
-      titulo: "Central de Atendimento",
-      principal: "(11) 3456-7890",
-      secundario: "WhatsApp: (11) 99999-9999",
-      cor: "from-blue-400 to-blue-500",
+      titulo: 'Central de Atendimento',
+      principal: '(11) 3456-7890',
+      secundario: 'WhatsApp: (11) 99999-9999',
+      cor: 'from-blue-400 to-blue-500',
     },
     {
       icon: Mail,
-      titulo: "Canais Digitais",
-      principal: "nutricao@vitafresh.com",
-      secundario: "suporte@vitafresh.com",
-      cor: "from-green-400 to-green-500",
+      titulo: 'Canais Digitais',
+      principal: 'nutricao@vitafresh.com',
+      secundario: 'suporte@vitafresh.com',
+      cor: 'from-green-400 to-green-500',
     },
     {
       icon: MapPin,
-      titulo: "Centro Culinário",
-      principal: "Rua da Saúde, 123",
-      secundario: "Vila Madalena - São Paulo, SP",
-      cor: "from-purple-400 to-purple-500",
-    }
-  ]
+      titulo: 'Centro Culinário',
+      principal: 'Rua da Saúde, 123',
+      secundario: 'Vila Madalena - São Paulo, SP',
+      cor: 'from-purple-400 to-purple-500',
+    },
+  ];
 
   const especialidades = [
     {
       icon: Users,
-      titulo: "Consultoria Nutricional CRN",
-      descricao: "Avaliação antropométrica, bioimpedância e plano alimentar personalizado com acompanhamento mensal",
+      titulo: 'Consultoria Nutricional CRN',
+      descricao: 'Avaliação antropométrica, bioimpedância e plano alimentar personalizado com acompanhamento mensal',
     },
     {
       icon: Heart,
-      titulo: "Acompanhamento Contínuo",
-      descricao: "Monitoramento de resultados, ajustes semanais e suporte psicológico para mudança de hábitos",
+      titulo: 'Acompanhamento Contínuo',
+      descricao: 'Monitoramento de resultados, ajustes semanais e suporte psicológico para mudança de hábitos',
     },
     {
       icon: Award,
-      titulo: "Resultados Cientificamente Comprovados",
-      descricao: "Metodologia validada com 94% de sucesso em 6 meses e publicação em revista científica",
+      titulo: 'Resultados Cientificamente Comprovados',
+      descricao: 'Metodologia validada com 94% de sucesso em 6 meses e publicação em revista científica',
     },
-  ]
+  ];
 
   const faqItems = [
     {
-      pergunta: "Como funciona a primeira consulta nutricional?",
+      pergunta: 'Como funciona a primeira consulta nutricional?',
       resposta:
-        "Avaliação completa de 90min com bioimpedância, exames laboratoriais e definição de metas personalizadas.",
+        'Avaliação completa de 90min com bioimpedância, exames laboratoriais e definição de metas personalizadas.',
     },
     {
-      pergunta: "Posso cancelar minha assinatura a qualquer momento?",
-      resposta: "Sim, sem multa ou taxa. Cancelamento até 48h antes da próxima entrega via app ou WhatsApp.",
+      pergunta: 'Posso cancelar minha assinatura a qualquer momento?',
+      resposta: 'Sim, sem multa ou taxa. Cancelamento até 48h antes da próxima entrega via app ou WhatsApp.',
     },
     {
-      pergunta: "Atendem restrições alimentares específicas?",
-      resposta: "Sim! Celíacos, diabéticos, veganos, low FODMAP e outras 15+ restrições com cardápios dedicados.",
+      pergunta: 'Atendem restrições alimentares específicas?',
+      resposta: 'Sim! Celíacos, diabéticos, veganos, low FODMAP e outras 15+ restrições com cardápios dedicados.',
     },
     {
-      pergunta: "Como funciona o programa de sustentabilidade?",
-      resposta: "Embalagens de vidro retornáveis, ingredientes orgânicos certificados e compensação total de carbono.",
+      pergunta: 'Como funciona o programa de sustentabilidade?',
+      resposta: 'Embalagens de vidro retornáveis, ingredientes orgânicos certificados e compensação total de carbono.',
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-200 via-green-100 to-lime-100 relative overflow-hidden">
       <Header />
 
       {/* Elementos decorativos */}
-      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-60"></div>
-      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-60"></div>
+      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-20"></div>
+      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-20"></div>
       <div className="absolute bottom-40 left-16 w-16 h-16 bg-red-400 rounded-full opacity-60"></div>
 
       <section className="py-16 px-4 relative z-20">
         <div className="container mx-auto max-w-7xl">
           {/* Hero da página */}
           <div className="text-center mb-20">
-            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
-              Fale com Nossos Especialistas
+            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent pb-6">
+              Fale conosco
             </h1>
             <div className="max-w-4xl mx-auto">
               <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                Nossa equipe de <span className="font-semibold text-green-600">nutricionistas CRN certificados</span>{" "}
+                Nossa equipe de <span className="font-semibold text-green-600">nutricionistas CRN certificados</span>{' '}
                 está pronta para criar seu plano nutricional personalizado. Atendimento humanizado, científico e focado
                 em resultados duradouros para sua saúde e bem-estar.
               </p>
-              <div className="flex items-center justify-center gap-2 text-green-600 font-semibold">
-                <Heart className="w-5 h-5" />
-                <span>Primeira consulta gratuita • Resposta em até 2 horas úteis</span>
-                <Heart className="w-5 h-5" />
+              <div className="flex items-center justify-center gap-6 text-sm">
+                <div className="flex items-center gap-2 text-green-600 font-semibold">
+                  <UserCheck className="w-5 h-5" />
+                  <span>Primeira consulta gratuita</span>
+                </div>
+                <div className="flex items-center gap-2 text-blue-600 font-semibold">
+                  <Clock className="w-5 h-5" />
+                  <span>Retorno em até 2h úteis</span>
+                </div>
+                <div className="flex items-center gap-2 text-purple-600 font-semibold">
+                  <MessageSquare className="w-5 h-5" />
+                  <span>Atendimento por WhatsApp, e-mail ou vídeo</span>
+                </div>
               </div>
             </div>
           </div>
@@ -105,7 +127,6 @@ export default function Contato() {
               <Card className="bg-white/80 backdrop-blur-lg shadow-2xl border-0">
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
-                    <Send className="w-8 h-8 text-green-500 mr-3" />
                     <h2 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
                       Solicite Sua Consulta Gratuita
                     </h2>
@@ -200,7 +221,9 @@ export default function Contato() {
               {/* Horários de Atendimento */}
               <Card className="bg-white/80 backdrop-blur-lg shadow-xl border-0">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-bold text-gray-800 mb-6">Horários de Atendimento Especializado</h3>
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
+                    Horários de atendimento especializado
+                  </h2>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
                       <span className="font-medium text-gray-800">Segunda a Sexta</span>
@@ -229,7 +252,9 @@ export default function Contato() {
               {/* Informações Principais */}
               <Card className="bg-white/80 backdrop-blur-lg shadow-xl border-0">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-8">Canais de Atendimento</h3>
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
+                    Canais de atendimento
+                  </h2>
 
                   <div className="space-y-6">
                     {informacoesContato.map((info, index) => (
@@ -253,7 +278,9 @@ export default function Contato() {
               {/* Especialidades */}
               <Card className="bg-white/80 backdrop-blur-lg shadow-xl border-0">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-bold text-gray-800 mb-6">Nossas Especialidades</h3>
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
+                    Nossas especialidades
+                  </h2>
                   <div className="space-y-6">
                     {especialidades.map((especialidade, index) => (
                       <div key={index} className="flex items-start gap-4 p-4 bg-green-50 rounded-xl">
@@ -273,7 +300,9 @@ export default function Contato() {
               {/* Benefícios Adicionais */}
               <Card className="bg-gradient-to-br from-blue-50 to-blue-100 shadow-xl border-0">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-bold text-gray-800 mb-6">Por que Escolher a VitaFresh?</h3>
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
+                    Por que escolher a VitaFresh?
+                  </h2>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
@@ -309,8 +338,8 @@ export default function Contato() {
           <Card className="bg-white/80 backdrop-blur-lg shadow-2xl border-0 mt-16">
             <CardContent className="p-12">
               <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4">
-                  Perguntas Frequentes
+                <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent pb-4">
+                  Perguntas frequentes
                 </h2>
                 <p className="text-gray-600 text-lg">Respostas dos nossos especialistas para as dúvidas mais comuns</p>
               </div>
@@ -334,5 +363,5 @@ export default function Contato() {
         </div>
       </section>
     </div>
-  )
+  );
 }

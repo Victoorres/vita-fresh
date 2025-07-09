@@ -9,7 +9,7 @@ export default function Home() {
   const beneficios = [
     {
       icon: Users,
-      titulo: "Nutricionistas Especializados",
+      titulo: "Nutricionistas",
       descricao: "Equipe de profissionais qualificados desenvolvendo cada cardápio",
       cor: "from-blue-400 to-blue-500",
     },
@@ -69,8 +69,8 @@ export default function Home() {
       <Header />
 
       {/* Elementos decorativos */}
-      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-60"></div>
-      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-60"></div>
+      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-20"></div>
+      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-20"></div>
       <div className="absolute bottom-40 left-16 w-16 h-16 bg-red-400 rounded-full opacity-60"></div>
 
       <Hero />
@@ -79,8 +79,8 @@ export default function Home() {
       <section className="py-20 px-4 relative z-20">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
-              Excelência em Nutrição
+            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent pb-6">
+              Excelência em nutrição
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Combinamos expertise nutricional, ingredientes premium e tecnologia para oferecer a melhor experiência em
@@ -113,7 +113,7 @@ export default function Home() {
       <section className="py-20 px-4 bg-gradient-to-r from-green-500 to-green-600 relative z-20">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Números que Falam por Si</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Números que falam por si</h2>
             <p className="text-green-100 text-lg">A confiança de milhares de clientes em nossa expertise nutricional</p>
           </div>
 
@@ -132,8 +132,8 @@ export default function Home() {
       <section className="py-20 px-4 relative z-20">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
-              O que Nossos Clientes Dizem
+            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent pb-6">
+              O que nossos clientes dizem
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Histórias reais de transformação e sucesso com nosso acompanhamento nutricional
@@ -179,7 +179,7 @@ export default function Home() {
       <section className="py-20 px-4 bg-gradient-to-br from-gray-800 to-gray-900 relative z-20">
         <div className="container mx-auto max-w-4xl text-center">
           <div className="mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Pronto para Transformar sua Alimentação?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Pronto para transformar sua alimentação?</h2>
             <p className="text-xl text-gray-300 leading-relaxed mb-8">
               Junte-se a milhares de pessoas que já transformaram suas vidas com nosso acompanhamento nutricional
               profissional
@@ -189,7 +189,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
             <Link href="/cardapio">
               <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 p-8">
-                Ver Nosso Cardápio
+                Ver cardápio
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
@@ -199,7 +199,7 @@ export default function Home() {
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-gray-800 font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 bg-transparent p-8"
               >
-                Falar com Nutricionista
+                Falar com nutricionista
               </Button>
             </Link>
           </div>

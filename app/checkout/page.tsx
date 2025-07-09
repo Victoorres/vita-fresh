@@ -237,7 +237,7 @@ export default function Checkout() {
                   type="date"
                   value={formData.deliveryDate}
                   onChange={(e) => handleInputChange("deliveryDate", e.target.value)}
-                  className="bg-white border-gray-300 focus:border-green-500 focus:ring-green-500"
+                  className="bg-white border-gray-300 pt-[3.9vh] pb-[3.9vh] focus:border-green-500 focus:ring-green-500"
                 />
               </div>
               <div>

@@ -98,8 +98,8 @@ export default function Painel() {
       <Header />
 
       {/* Elementos decorativos */}
-      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-60"></div>
-      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-60"></div>
+      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-20"></div>
+      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-20"></div>
 
       <section className="py-16 px-4 relative z-20">
         <div className="container mx-auto max-w-7xl">
@@ -248,7 +248,6 @@ export default function Painel() {
                 <CardContent className="p-8">
                   <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center">
-                      <Target className="w-8 h-8 text-green-500 mr-3" />
                       <h3 className="text-2xl font-bold text-gray-800">Progresso das Metas</h3>
                     </div>
                     <Button
@@ -296,7 +295,6 @@ export default function Painel() {
                 <CardContent className="p-8">
                   <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center">
-                      <Package className="w-8 h-8 text-blue-500 mr-3" />
                       <h3 className="text-2xl font-bold text-gray-800">Pedidos Recentes</h3>
                     </div>
                     <Button
@@ -359,8 +357,7 @@ export default function Painel() {
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
                       <div className="flex items-center mb-4">
-                        <Heart className="w-8 h-8 mr-3" />
-                        <h3 className="text-2xl font-bold">Progresso Nutricional</h3>
+                        <h3 className="text-2xl font-bold">Progresso nutricional</h3>
                       </div>
                       <p className="text-green-100 text-lg mb-2">Parabéns! Você está no caminho certo</p>
                       <p className="text-green-200 text-sm mb-6">Mantenha o foco nos seus objetivos</p>
@@ -380,9 +377,6 @@ export default function Painel() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                        <TrendingUp className="w-12 h-12 text-white" />
-                      </div>
                       <Button className="bg-white text-green-600 hover:bg-green-50 font-semibold transition-colors duration-200">
                         Ver Relatório Completo
                       </Button>

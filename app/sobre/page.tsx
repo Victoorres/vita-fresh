@@ -1,6 +1,6 @@
 import Header from '@/components/header';
 import { Card, CardContent } from '@/components/ui/card';
-import { Users, Award, Heart, Leaf } from 'lucide-react';
+import { Users, Award, Heart, Leaf, CheckCircle, Calendar, Package } from 'lucide-react';
 
 export default function Sobre() {
   return (
@@ -8,19 +8,35 @@ export default function Sobre() {
       <Header />
 
       {/* Elementos decorativos */}
-      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-60"></div>
-      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-60"></div>
+      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-20"></div>
+      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-20"></div>
       <div className="absolute bottom-40 left-16 w-16 h-16 bg-red-400 rounded-full opacity-60"></div>
 
       <section className="py-16 px-4 relative z-20">
         <div className="container mx-auto max-w-6xl">
           {/* Hero da página */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">Nossa História VitaFresh</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent pb-6">
+              Nossa história
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-6">
               Nascemos da paixão por transformar a relação das pessoas com a alimentação. Somos pioneiros em nutrição
-              personalizada com impacto ambiental zero, unindo ciência, sabor e sustentabilidade.
+              personalizada com impacto ambiental zero — unindo ciência, sabor e sustentabilidade em cada detalhe.
             </p>
+            <div className="flex items-center justify-center gap-6 text-sm">
+              <div className="flex items-center gap-2 text-green-600 font-semibold">
+                <Calendar className="w-5 h-5" />
+                <span>Desde 2013</span>
+              </div>
+              <div className="flex items-center gap-2 text-yellow-600 font-semibold">
+                <Package className="w-5 h-5" />
+                <span>Mais de 20 mil refeições entregues</span>
+              </div>
+              <div className="flex items-center gap-2 text-blue-600 font-semibold">
+                <Heart className="w-5 h-5" />
+                <span>100% de feedback positivo</span>
+              </div>
+            </div>
           </div>
 
           {/* Nossa História */}

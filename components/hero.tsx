@@ -43,13 +43,9 @@ export default function Hero() {
           {/* Hero Content */}
           <div className="text-center mb-20">
 
-            <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 bg-clip-text text-transparent mb-6 leading-tight">
-              Dieta Saudável
+            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+              Dieta saudável
             </h1>
-            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent pb-4">
-              Com entrega gratuita
-            </h2>
-
             <div className="max-w-3xl mx-auto mt-8">
               <p className="text-xl text-gray-600 leading-relaxed mb-6">
                 Refeições balanceadas criadas por{" "}
@@ -58,9 +54,7 @@ export default function Hero() {
                 personalizado para seus objetivos de saúde e bem-estar.
               </p>
               <div className="flex items-center justify-center gap-2 text-orange-600 font-semibold">
-                <Heart className="w-5 h-5" />
                 <span>Embalagens de vidro 100% sustentáveis - Cuide de você e do planeta</span>
-                <Heart className="w-5 h-5" />
               </div>
             </div>
           </div>
@@ -135,7 +129,7 @@ export default function Hero() {
                   <div className="relative">
                     <div className="w-48 h-48 bg-gradient-to-br from-white to-gray-50 rounded-full shadow-xl overflow-hidden border-4 border-orange-100 mx-auto group-hover:border-orange-200 transition-colors duration-300">
                       <Image
-                        src="/sem-lactose.png?height=192&width=192"
+                        src="/sem-gluten.png?height=192&width=192"
                         alt="Refeição Dieta Sem Glúten"
                         width={192}
                         height={192}

@@ -2,21 +2,33 @@ import Header from '@/components/header';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock, User, ArrowRight, BookOpen, Heart, Zap, Leaf, Award } from 'lucide-react';
+import {
+  Calendar,
+  Clock,
+  User,
+  ArrowRight,
+  BookOpen,
+  Heart,
+  Zap,
+  Leaf,
+  Award,
+  CheckCircle,
+  Coffee,
+} from 'lucide-react';
 import Image from 'next/image';
 
 export default function Blog() {
   const artigosPrincipais = [
     {
       id: 1,
-      titulo: '10 Superalimentos que Transformam sua Energia Diária',
+      titulo: 'Alimentos que Transformam sua Energia Diária',
       resumo:
         'Descubra os alimentos funcionais que nossos nutricionistas recomendam para aumentar disposição e vitalidade naturalmente.',
       autor: 'Dra. Ana Beatriz Silva',
       data: '15 Jan 2024',
       tempoLeitura: '8 min',
       categoria: 'Nutrição Funcional',
-      imagem: '/placeholder.svg?height=300&width=400',
+      imagem: '/alimentos.jpg?height=300&width=400',
       destaque: true,
     },
     {
@@ -28,7 +40,7 @@ export default function Blog() {
       data: '12 Jan 2024',
       tempoLeitura: '12 min',
       categoria: 'Emagrecimento',
-      imagem: '/placeholder.svg?height=300&width=400',
+      imagem: '/jejum.jpg?height=300&width=400',
       destaque: true,
     },
   ];
@@ -42,7 +54,7 @@ export default function Blog() {
       data: '10 Jan 2024',
       tempoLeitura: '6 min',
       categoria: 'Receitas',
-      imagem: '/placeholder.svg?height=200&width=300',
+      imagem: '/prato.jpeg?height=200&width=300',
     },
     {
       id: 4,
@@ -52,7 +64,7 @@ export default function Blog() {
       data: '8 Jan 2024',
       tempoLeitura: '10 min',
       categoria: 'Suplementação',
-      imagem: '/placeholder.svg?height=200&width=300',
+      imagem: '/suplementos.jpg?height=200&width=300',
     },
     {
       id: 5,
@@ -62,7 +74,7 @@ export default function Blog() {
       data: '5 Jan 2024',
       tempoLeitura: '15 min',
       categoria: 'Vegetarianismo',
-      imagem: '/placeholder.svg?height=200&width=300',
+      imagem: '/alimentacao-plant.jpg?height=200&width=300',
     },
     {
       id: 6,
@@ -72,7 +84,7 @@ export default function Blog() {
       data: '3 Jan 2024',
       tempoLeitura: '7 min',
       categoria: 'Hidratação',
-      imagem: '/placeholder.svg?height=200&width=300',
+      imagem: '/hidratacao.jpg?height=200&width=300',
     },
     {
       id: 7,
@@ -82,17 +94,17 @@ export default function Blog() {
       data: '1 Jan 2024',
       tempoLeitura: '11 min',
       categoria: 'Saúde Intestinal',
-      imagem: '/placeholder.svg?height=200&width=300',
+      imagem: '/microbiota.jpg?height=200&width=300',
     },
     {
       id: 8,
-      titulo: 'Meal Prep: Organização que Transforma Hábitos',
+      titulo: 'Organização que Transforma Hábitos',
       resumo: 'Estratégias práticas para planejar e preparar refeições saudáveis da semana.',
       autor: 'Chef Marcus Oliveira',
       data: '28 Dez 2023',
       tempoLeitura: '9 min',
       categoria: 'Organização',
-      imagem: '/placeholder.svg?height=200&width=300',
+      imagem: '/habitos.jpg?height=200&width=300',
     },
   ];
 
@@ -108,28 +120,36 @@ export default function Blog() {
       <Header />
 
       {/* Elementos decorativos */}
-      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-60"></div>
-      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-60"></div>
+      <div className="absolute top-32 left-8 w-24 h-24 bg-orange-400 rounded-full opacity-20"></div>
+      <div className="absolute top-20 right-12 w-20 h-20 bg-purple-300 rounded-full opacity-20"></div>
       <div className="absolute bottom-40 left-16 w-16 h-16 bg-red-400 rounded-full opacity-60"></div>
 
       <section className="py-16 px-4 relative z-20">
         <div className="container mx-auto max-w-7xl">
           {/* Hero da página */}
           <div className="text-center mb-20">
-            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
-              Blog VitaFresh
+            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent pb-6">
+              Novidades
             </h1>
             <div className="max-w-4xl mx-auto">
               <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                Conteúdo científico e prático criado por{' '}
+                Dicas, receitas e ciência da nutrição, direto de{' '}
                 <span className="font-semibold text-green-600">nutricionistas CRN certificados</span> e chefs
-                especializados. Transforme seu conhecimento sobre alimentação saudável com artigos baseados em
-                evidências e receitas testadas em nosso laboratório culinário.
+                especialistas. Conteúdo baseado em evidências, testado na prática e pensado pra você.
               </p>
-              <div className="flex items-center justify-center gap-2 text-green-600 font-semibold">
-                <BookOpen className="w-5 h-5" />
-                <span>Artigos novos toda semana • Conteúdo científico validado</span>
-                <BookOpen className="w-5 h-5" />
+              <div className="flex items-center justify-center gap-8 text-sm">
+                <div className="flex items-center gap-2 text-green-600 font-semibold">
+                  <BookOpen className="w-6 h-6" />
+                  <span>Novos artigos toda semana</span>
+                </div>
+                <div className="flex items-center gap-2 text-yellow-600 font-semibold">
+                  <Coffee className="w-6 h-6" />
+                  <span>Receitas testadas</span>
+                </div>
+                <div className="flex items-center gap-2 text-blue-600 font-semibold">
+                  <CheckCircle className="w-6 h-6" />
+                  <span>Conteúdo validado</span>
+                </div>
               </div>
             </div>
           </div>
@@ -156,8 +176,8 @@ export default function Blog() {
 
           {/* Artigos em Destaque */}
           <div className="mb-16">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent text-center mb-12">
-              Artigos em Destaque
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent text-center pb-12">
+              Artigos em destaque
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               {artigosPrincipais.map((artigo) => (
@@ -210,8 +230,8 @@ export default function Blog() {
 
           {/* Todos os Artigos */}
           <div className="mb-16">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent text-center mb-12">
-              Todos os Artigos
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent text-center pb-12">
+              Todos os artigos
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {artigos.map((artigo) => (
@@ -254,7 +274,7 @@ export default function Blog() {
                     </div>
                     <Button
                       variant="outline"
-                      className="w-full border-green-200 text-green-600 hover:bg-green-50 font-medium transition-colors duration-200 bg-transparent"
+                      className="w-full border-green-200 text-green-600 hover:bg-green-50 font-medium transition-colors duration-200 bg-transparent hover:text-gree-700"
                     >
                       Ler Mais
                       <ArrowRight className="w-4 h-4 ml-2" />
@@ -270,7 +290,7 @@ export default function Blog() {
             <CardContent className="p-12 text-center text-white">
               <div className="max-w-3xl mx-auto">
                 <BookOpen className="w-16 h-16 mx-auto mb-6" />
-                <h2 className="text-4xl font-bold mb-6">Receba Conteúdo Exclusivo</h2>
+                <h2 className="text-4xl font-bold mb-6">Receba conteúdo exclusivo</h2>
                 <p className="text-xl mb-8 opacity-90">
                   Cadastre-se e receba semanalmente artigos exclusivos, receitas funcionais e dicas de nossos
                   nutricionistas diretamente no seu email.
@@ -278,10 +298,10 @@ export default function Blog() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
                   <input
                     type="email"
-                    placeholder="Seu melhor email"
-                    className="flex-1 px-6 py-3 rounded-full text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
+                    placeholder="Seu email"
+                    className="flex-1 px-6 py-3 rounded-full text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white bg-white"
                   />
-                  <Button className="bg-white text-green-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <Button className="bg-white text-green-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 p-6">
                     Inscrever-se
                   </Button>
                 </div>
